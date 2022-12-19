@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Untitled-1.css">
+    <meta name="twitter:image:src" content="https://www.firewatchgame.com/images/badge.png">
+    
+    <link rel="apple-touch-icon" href="images/appicon.png">
+
+    <link rel="stylesheet" href="css/firewatchlaunch.css" type="text/css" media="screen" charset="utf-8">
+    <link rel="stylesheet" href="https://www.camposanto.com/css/camponav.css" type="text/css" media="screen" charset="utf-8">
+
+</head>
+    <title>Star Paws</title>
+    <link rel="icon" href="image/Untitled-3.png">
+    <style>
+        body{
+            position: relative;
+        }
+        .paw{
+            border: 1px;border-style: solid;
+            height: 300px; width: 1300px;
+            background-image: url(image/background1.png);
+        }
+        .jedi{
+            border: 1px;border-style: solid;
+            height: 600px;width: 650px;
+            float: left;
+            background-image: url(image/Untitled-1.png);
+            text-align: center;
+            text-decoration: none;
+            color: aliceblue;
+        }
+        h3{
+            color: aliceblue;
+            text-transform: uppercase;
+            size: 100px;
+            font-size: 30px;
+            position: relative;
+            bottom: 100px;
+            
+        }
+        a{
+            text-decoration: none;
+        }
+        .sith{
+            border: 1px;border-style: solid;
+            height: 600px;width: 650px;
+            float: right;
+            background-image: url(image/Untitled-2.png);
+            text-align: center;
+            text-decoration: none;
+            color: aliceblue;
+        }
+        body{ 
+    background-color: rgb(0, 0, 0);}
+    .meenu{
+        height: 30px;
+        width: 30px;
+    }
+    #date{
+        float: left;
+        font-weight: bolder;
+        margin-top:17rem;
+        color: aliceblue;
+    }
+    </style>
+</head>
+<body>
+    <div class="parallax"> 
+        <ul class="navbar-top">
+            <li id="nav-company"><a href=""><strong>IRwish</strong></a></li><img src="image/Untitled-4.png" style="height: 30px; width: 30px;" >
+            <li id="nav-review"><a href=""><strong><span class="collapse">Нэвтрэх</span><span class="reveal">Newsletter</span></strong></a></li> 
+            <li id="nav-review"><a href="about.html"><strong><span class="collapse">Бидний тухай</span></strong></a></li>
+            <li id="nav-review"><a href="film.html"><strong><span class="collapse">Уран бүтээлүүд</span></strong></a></li>
+            <li class=" current"><a href="index.html"><strong>Star Paws</strong></a></li>
+        </ul>
+        <hr>
+    </div>
+    <center><div class="paw"><p id="date"></p></div></center> 
+   <hr> 
+   <div>
+    <center style="font-size: large;color: aliceblue;"><h1>Танилцуулга</h1></center>
+
+    <div class="jedi"><image src="image/Untitled-122.png"> <a href="Jedi.html"><h3>Jedi</h3></a>
+    </div>
+    <div class="sith"><image src="image/Untitled-3aw.png">
+        <a href="sith.html"><h3>Sith</h3></a>
+    </div>
+   </div>
+   <center>Илүү</center>
+   <hr>
+   <ul class="navbar-top">
+    <li id="nav-company"> <a href="https://www.facebook.com/profile.php?id=100089054311888"><img class="meenu" src="image/facebook (2).png" alt=""></a></li>
+    <li id="nav-company"><a href=""><img class="meenu" src="image/discord.png" alt=""></a></li>
+    <li id="nav-company"><a href=""><img class="meenu" src="image/youtube.png" alt=""></a></li>
+    <li id="nav-company"><a href="index.html"><img src="image/Untitled-4.png" style="height: 30px; width: 30px;" >
+</ul>
+</body>
+<script>
+    const date = new Date();
+    let x = document.getElementById('date')
+    x.innerHTML=date
+</script>
+
+</html>

@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Нэвтрэх</title> 
+    <link rel="stylesheet" href="logincss.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+    <link rel="icon" type="https://beansandcream.com.au/wp-content/uploads/2017/09/Beans-cream-home-slider.png" href="https://beansandcream.com.au/wp-content/uploads/2017/09/Beans-cream-home-slider.png">
+    <style>
+        :root{
+  --main-color:#ffffff;
+  --black:#13131a;
+  --bg:rgb(0, 0, 0);
+  --border:.1rem solid rgba(255, 255, 255, 0.3);
+}
+*{
+  font-family: 'Roboto', sans-serif;
+  margin:0; padding:0;
+  box-sizing: border-box;
+  outline: none; border:none;
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: .2s linear;
+}
+
+html{
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-padding-top: 9rem;
+  scroll-behavior: smooth;
+}
+
+html::-webkit-scrollbar{
+  width: .8rem;
+}
+
+html::-webkit-scrollbar-track{
+  background: transparent;
+}
+
+html::-webkit-scrollbar-thumb{
+  background: #fff;
+  border-radius: 5rem;
+}
+
+body{
+  background: var(--bg);
+}
+
+section{
+  padding:2rem 7%;
+}
+
+.heading{
+  text-align: center;
+  color:#fff;
+  text-transform: uppercase;
+  padding-bottom: 3.5rem;
+  font-size: 4rem;
+}
+
+.heading span{
+  color:var(--main-color);
+  text-transform: uppercase;
+}
+
+.btn{
+  margin-top: -18px;
+    margin-left: 120px;
+  display: inline-block;
+  padding:.9rem 3rem;
+  font-size: 1.7rem;
+  color:rgb(0, 0, 0);
+  background: var(--main-color);
+  cursor: pointer;
+}
+
+.btn:hover{
+  letter-spacing: .2rem;
+}
+
+.header{
+  background: var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding:1.5rem 7%;
+  border-bottom: var(--border);
+  position: fixed;
+  top:0; left: 0; right: 0;
+  z-index: 1000;
+}
+
+.header .logo img{
+  height: 9rem;
+}
+
+.header .navbar a{
+  margin:0 1rem;
+  font-size: 1.6rem;
+  color:rgb(0, 0, 0);
+  /* padding-right: 90px; */
+}
+
+.header .navbar a:hover{
+  color:var(--main-color);
+  border-bottom: .1rem solid var(--main-color);
+  padding-bottom: .5rem;
+}
+
+.header .icons div{
+  color:rgb(0, 0, 0);
+  cursor: pointer;
+  font-size: 2.5rem;
+  margin-left: 2rem;
+}
+
+.header .icons div:hover{
+  color:var(--main-color);
+}
+
+#menu-btn{
+  display: none;
+}
+
+.header .search-form{ 
+  position: absolute;
+  top:115%; right: 7%;
+  background: rgb(0, 0, 0);
+  width: 50rem;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  transform: scaleY(0);
+  transform-origin: top;
+}
+
+.header .search-form.active{
+  transform: scaleY(1);
+}
+
+.header .search-form input{
+  height: 100%;
+  width: 100%;
+  font-size: 1.6rem;
+  color:var(--black);
+  padding:1rem;
+  text-transform: none;
+}
+
+.header .search-form label{
+  cursor: pointer;
+  font-size: 2.2rem;
+  margin-right: 1.5rem;
+  color:var(--black);
+}
+
+.header .search-form label:hover{
+  color:var(--main-color);
+}
+
+.header .cart-items-container{
+  position: absolute;
+  top:100%; right: -100%;
+  height: calc(100vh - 9.5rem);
+  width: 35rem;
+  background: rgb(0, 0, 0);
+  padding:0 1.5rem;
+}
+
+.header .cart-items-container.active{
+  right: 0;
+}
+
+.header .cart-items-container .cart-item{
+  position: relative;
+  margin:2rem 0;
+  display: flex;
+  align-items: center;
+  gap:1.5rem;
+}
+
+.header .cart-items-container .cart-item .fa-times{
+  position: absolute;
+  top:1rem; right: 1rem;
+  font-size: 2rem;
+  cursor: pointer;
+  color: var(--black);
+}
+
+.header .cart-items-container .cart-item .fa-times:hover{
+  color:var(--main-color);
+}
+
+.header .cart-items-container .cart-item img{
+  height: 7rem;
+}
+
+.header .cart-items-container .cart-item .content h3{
+  font-size: 2rem;
+  color:var(--black);
+  padding-bottom: .5rem;
+}
+
+.header .cart-items-container .cart-item .content .price{
+  font-size: 1.5rem;
+  color:var(--main-color);
+}
+
+.header .cart-items-container .btn{
+  width: 100%;
+  text-align: center;
+} 
+
+.home{
+  min-height: 100vh;
+  display: flex;
+   align-items: center; 
+  background:url(../images/bgg.png) no-repeat;
+  background-size: 600px;
+  background-position: right;
+}
+
+.home .content{
+  max-width: 60rem;
+}
+
+.home .content h3{
+  font-size: 6rem;
+  text-transform: uppercase;
+  color:rgb(0, 0, 0);
+}
+
+.home .content p{
+  font-size: 2rem;
+  font-weight: lighter;
+  line-height: 1.8;
+  padding:1rem 0;
+  color:rgb(0, 0, 0);
+}
+
+body{
+  background: #000000;
+  overflow: hidden;
+}
+::selection{
+  background: #ffffff;
+}
+.btn{
+  margin-top: 1rem;
+  display: inline-block;
+  padding:.9rem 3rem;
+  font-size: 1.7rem;
+  color:#fff;
+  background: var(--main-color);
+  cursor: pointer;
+}
+.btn:hover{
+  letter-spacing: .2rem;
+}
+.container{
+  max-width: 440px;
+  padding: 0 0px;
+  margin: 170px auto;
+}
+.wrapper{
+  width: 100%;
+  background: #000000;
+  border-radius: 5px;
+  box-shadow: 0px 4px 10px 1px rgba(0,0,0,0.1);
+}
+.wrapper .title{
+  height: 90px;
+  background: #000000;
+  border-radius: 5px 5px 0 0;
+  color: #fff;
+  font-size: 30px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.wrapper form{
+  padding: 30px 25px 25px 25px;
+}
+.wrapper form .row{
+  height: 45px;
+  margin-bottom: 15px;
+  position: relative;
+}
+.wrapper form .row input{
+  height: 100%;
+  width: 100%;
+  outline: none;
+  padding-left: 60px;
+  border-radius: 5px;
+  border: 1px solid lightgrey;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+form .row input:focus{
+  border-color: #000000;
+  box-shadow: inset 0px 0px 2px 2px rgba(0, 0, 0, 0.25);
+}
+form .row input::placeholder{
+  color: rgb(0, 0, 0);
+}
+.wrapper form .row i{
+  position: absolute;
+  width: 47px;
+  height: 100%;
+  color: #fff;
+  font-size: 18px;
+  background: #ff0000;
+  border: 1px solid #000000;
+  border-radius: 5px 0 0 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.wrapper form .pass{
+  margin: -8px 0 20px 0;
+}
+.wrapper form .pass a{
+  color: #000000;
+  font-size: 17px;
+  text-decoration: none;
+}
+.wrapper form .pass a:hover{
+  text-decoration: underline;
+}
+.wrapper form .button input{
+  color: #fff;
+  font-size: 20px;
+  font-weight: 500;
+  padding-left: 0px;
+  background: #000000;
+  border: 1px solid #000000;
+  cursor: pointer;
+}
+form .button input:hover{
+  background: #ff0000;
+}
+.wrapper form .signup-link{
+  text-align: center;
+  margin-top: 20px;
+  font-size: 17px;
+  color: #fff;
+}
+.wrapper form .signup-link a{
+  color: #ff0000;
+  text-decoration: none;
+}
+form .signup-link a:hover{
+  text-decoration: underline;
+}
+ .wrapper .button .btn{
+    margin-top: -18px;
+    margin-left: 110px;
+    display: inline-block;
+    padding:.9rem 3rem;
+    font-size: 18px;
+    color:#000000;
+    background: var(--main-color);
+    cursor: pointer;
+  }
+  .btn:hover{
+    letter-spacing: .2rem;}
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="wrapper">
+        <div  class="title"><span>Нэвтрэх</span></div>
+        <form action="#">
+          <div class="row">
+            <i class="fas fa-user"></i>
+            <input type="text" id="mail" placeholder="123@gmail.com" required>
+          </div>
+          <div class="row">
+            <i class="fas fa-lock"></i>
+            <input id="pass" type="password" placeholder="12345" required>
+          </div>
+          <div class="pass"><a href="#">Нууц үгээ мартсан уу?</a></div>
+          <div class="row button">
+            <div>
+            <a href="index.html" id="btn" class="btn" onclick="login()">Нэвтрэх</a>
+            
+          </div>
+          <div class="signup-link"> Бүртгэл үүсгэх | <a href="#">Бүртгүүлэх</a></div>
+        </form>
+      </div>
+    </div>
+
+  </body>
+  <script>
+    function login(){
+      let mail = document.getElementById('mail')
+      let pass = document.getElementById('pass')
+      let btn= document.getElementById('btn')
+      if(mail.value=="123@gmail.com" && pass.value=="12345"){
+        location.href="index.html"
+      } else{
+        mail.value=""
+        pass.value=""
+      }
+    }
+  </script>
+</html>
